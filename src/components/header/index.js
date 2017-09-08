@@ -2,39 +2,67 @@ import { h, Component } from "preact";
 import { Link } from "preact-router/match";
 
 export default class Header extends Component {
-  render() {
+  state = {
+    expanded: false
+  };
+
+  toggleExpanded = () => {
+    this.setState({ expanded: !this.state.expanded });
+  };
+
+  collapse = () => {
+    this.setState({ expanded: false });
+  };
+
+  render({}, { expanded }) {
+    const dropDownClass = expanded
+      ? "navbar-collapse collapse show"
+      : "navbar-collapse collapse";
+    const buttonClass = expanded
+      ? "navbar-toggler"
+      : "navbar-toggler collapsed";
+
     return (
       <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <Link class="navbar-brand" href="/">
+          <Link onClick={this.collapse} class="navbar-brand" href="/">
             Preact App
           </Link>
           <button
-            class="navbar-toggler"
+            class={buttonClass}
             type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
+            aria-expanded={expanded}
             aria-label="Toggle navigation"
+            onClick={this.toggleExpanded}
           >
             <span class="navbar-toggler-icon" />
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class={dropDownClass}>
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <Link class="nav-link" activeClassName="active" href="/">
+                <Link
+                  onClick={this.collapse}
+                  class="nav-link"
+                  activeClassName="active"
+                  href="/"
+                >
                   Home
                 </Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link" activeClassName="active" href="/movies">
+                <Link
+                  onClick={this.collapse}
+                  class="nav-link"
+                  activeClassName="active"
+                  href="/movies"
+                >
                   Movies
                 </Link>
               </li>
               <li class="nav-item">
                 <Link
+                  onClick={this.collapse}
                   class="nav-link"
                   activeClassName="active"
                   href="/directors"
