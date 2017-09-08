@@ -18,7 +18,9 @@ class Movies extends Component {
       <div>
         <h1>Movies</h1>
 
-        <ul>{movies.map(movie => <Movie movie={movie} />)}</ul>
+        <div>
+          {movies.map(movie => <Movie movie={movie} />)}
+        </div>
       </div>
     );
   }

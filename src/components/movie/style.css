@@ -1,0 +1,12 @@
+.image {
+  padding-right: 1.25rem;
+}
+
+.card {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card:last-child {
+  margin-bottom: 5rem;
+}
