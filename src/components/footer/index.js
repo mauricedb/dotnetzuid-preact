@@ -1,4 +1,5 @@
 import { h, Component } from "preact";
+import classnames from "classnames";
 import style from "./style";
 
 const date = new Date();
@@ -12,7 +13,7 @@ class Footer extends Component {
             Copyright © {year}{" "}
             <a href="http://theproblemsolver.nl/">ABL - The Problem Sover</a>
           </span>
-          <span class={"text-muted " + style.link}>
+          <span class={classnames("text-muted", style.link)}>
             Movies from <a href="https://www.themoviedb.org/">The Movie DB</a>
           </span>
         </div>
