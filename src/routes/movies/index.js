@@ -10,7 +10,7 @@ class Movies extends Component {
   componentDidMount() {
     fetch("/api/movies.json")
       .then(rsp => rsp.json())
-      .then(movies => this.setState({ movies }));
+      .then(movies => this.setState(() => ({ movies })));
   }
 
   render({}, { movies }) {
@@ -18,9 +18,7 @@ class Movies extends Component {
       <div>
         <h1>Movies</h1>
 
-        <div>
-          {movies.map(movie => <Movie movie={movie} />)}
-        </div>
+        <div>{movies.map(movie => <Movie movie={movie} />)}</div>
       </div>
     );
   }

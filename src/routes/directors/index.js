@@ -8,7 +8,7 @@ class Directors extends Component {
   componentDidMount() {
     fetch("/api/directors.json")
       .then(rsp => rsp.json())
-      .then(directors => this.setState({ directors }));
+      .then(directors => this.setState(() => ({ directors })));
   }
 
   render({}, { directors }) {

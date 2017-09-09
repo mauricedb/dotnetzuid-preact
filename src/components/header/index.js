@@ -8,11 +8,11 @@ export default class Header extends Component {
   };
 
   toggleExpanded = () => {
-    this.setState({ expanded: !this.state.expanded });
+    this.setState(state => ({ expanded: !state.expanded }));
   };
 
   collapse = () => {
-    this.setState({ expanded: false });
+    this.setState(() => ({ expanded: false }));
   };
 
   render({}, { expanded }) {
