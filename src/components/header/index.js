@@ -20,7 +20,7 @@ export default class Header extends Component {
       <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <Link onClick={this.collapse} class="navbar-brand" href="/">
-            Preact App
+            .NET Zuid
           </Link>
           <button
             class={classnames("navbar-toggler", { collapsed: !expanded })}
