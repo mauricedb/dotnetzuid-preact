@@ -1,4 +1,5 @@
 import { h, Component } from "preact";
+import classnames from "classnames";
 import { Link } from "preact-router/match";
 
 export default class Header extends Component {
@@ -15,13 +16,6 @@ export default class Header extends Component {
   };
 
   render({}, { expanded }) {
-    const dropDownClass = expanded
-      ? "navbar-collapse collapse show"
-      : "navbar-collapse collapse";
-    const buttonClass = expanded
-      ? "navbar-toggler"
-      : "navbar-toggler collapsed";
-
     return (
       <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -29,7 +23,7 @@ export default class Header extends Component {
             Preact App
           </Link>
           <button
-            class={buttonClass}
+            class={classnames("navbar-toggler", { collapsed: !expanded })}
             type="button"
             aria-expanded={expanded}
             aria-label="Toggle navigation"
@@ -38,7 +32,11 @@ export default class Header extends Component {
             <span class="navbar-toggler-icon" />
           </button>
 
-          <div class={dropDownClass}>
+          <div
+            class={classnames("navbar-collapse", "collapse", {
+              show: expanded
+            })}
+          >
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
                 <Link
