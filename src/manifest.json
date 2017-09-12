@@ -1,9 +1,9 @@
 {
   "name": ".NET Zuid Demo",
-  "short_name": ".NET Zuid Demo",
+  "short_name": ".NET Zuid",
   "start_url": "/",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "natural",
   "background_color": "#fff",
   "theme_color": "#673ab8",
   "icons": [{
