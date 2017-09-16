@@ -1,4 +1,5 @@
 import { h, Component } from "preact";
+import { Link } from "preact-router/match";
 import classnames from "classnames";
 import Genre from "../genre";
 import style from "./style";
@@ -23,9 +24,9 @@ class Movie extends Component {
         <div class="card-body">
           {img}
           <p class="card-text">{movie.overview}</p>
-          <a href="#" class="btn btn-primary">
+          <Link href={`/movie/${movie.id}/${movie.title}`} class="btn btn-primary">
             Read More
-          </a>
+          </Link>
           <span class="float-right">
             {movie.genres.map(genre => <Genre genre={genre} />)}
           </span>

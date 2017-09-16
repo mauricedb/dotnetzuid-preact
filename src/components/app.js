@@ -6,6 +6,7 @@ import Footer from "./footer";
 import Home from "../routes/home";
 import Profile from "../routes/profile";
 import Movies from "../routes/movies";
+import MovieDetails from "../routes/movie-details";
 import Directors from "../routes/directors";
 
 // import Home from 'async!./home';
@@ -28,6 +29,7 @@ export default class App extends Component {
           <Router onChange={this.handleRoute}>
             <Home path="/" />
             <Movies path="/movies" />
+            <MovieDetails path="/movie/:id/:title"/>
             <Directors path="/directors" />
             <Profile path="/profile/" user="me" />
             <Profile path="/profile/:user" />
