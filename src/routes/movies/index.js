@@ -64,12 +64,7 @@ class Movies extends Component {
             ))}
         </div>
 
-        <div
-          class={style.bottom}
-          ref={el => {
-            this.bottom = el;
-          }}
-        />
+        <div class={style.bottom} ref={el => (this.bottom = el)} />
       </div>
     );
   }
