@@ -8,7 +8,7 @@ class Movie extends Component {
   render({ movie, isMediumScreen }) {
     let img = null;
 
-    if (isMediumScreen) {
+    // if (isMediumScreen) {
       img = (
         <div
           class={classnames("float-left", "d-none", "d-md-block", style.image)}
@@ -16,7 +16,7 @@ class Movie extends Component {
           <img src={`//image.tmdb.org/t/p/w150${movie.poster_path}`} />
         </div>
       );
-    }
+    // }
 
     return (
       <div class={classnames("card", style.card)}>
