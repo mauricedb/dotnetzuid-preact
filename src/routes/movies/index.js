@@ -58,7 +58,7 @@ class Movies extends Component {
 
         <div>
           {movies
-            //.slice(0, take)
+            .slice(0, take)
             .map(movie => (
               <Movie movie={movie} isMediumScreen={isMediumScreen} />
             ))}
